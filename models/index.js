@@ -32,10 +32,11 @@ const {quiz, tip, user} = sequelize.models;
 
 tip.belongsTo(quiz);
 quiz.hasMany(tip);
-
-// Relation 1-to-N between User and Quiz:
+// Relation 1-to-N between Tip and User:
 user.hasMany(quiz, {foreignKey: 'authorId'});
 quiz.belongsTo(user, {as: 'author', foreignKey: 'authorId'});
 
+user.hasMany(tip, {foreignKey: 'authorId'});
+tip.belongsTo(user, {as: 'author', foreignKey: 'authorId'});
 
 module.exports = sequelize;
