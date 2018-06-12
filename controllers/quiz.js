@@ -193,14 +193,6 @@ exports.randomplay = (req, res, next) => {
 .catch(error => {
         next(error);
 });
-
-    //const answer = query.answer || "";
-    //const result = answer.toLowerCase().trim() === quiz.answer.toLowerCase().trim();
-
-    //res.render('quizzes/random_play', {
-    //quiz,
-    //score
-    //});
 };
 
 
